@@ -1,0 +1,4 @@
+files=C:/Users/Michal/PycharmProjects/HiVAT/testFiles
+vlc=C:/Users/Michal/PycharmProjects/HiVAT/VLC
+testDataType=.wav
+logFileName=info.log
