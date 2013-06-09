@@ -105,7 +105,7 @@ def resultStats(res):
     for result in results:
         if result <= avg-2*stdDev:
             problems += 1
-            #TODO: Create a dictionary of keys -> results and data their name to better give info
+            #TODO: Create a dictionary of keys -> results and store the names to give more information
     logger.info('{:3}[Possible Bugs]: {}'.format('', problems))
 '''
 #A run and statistical data
