@@ -33,6 +33,9 @@ def getConfigData (fileName):
         update(toUpdate,data)
 
 def update (toUpdate, data):
+    '''
+        Sets a given variable to data based on the string toUpdate
+    '''
     global testPath, VLCpath, testDataType, logFileName
     #TODO: Log the set paths
     #print (data)
@@ -69,6 +72,9 @@ def testConfig():
 
 
 def updateTestData():
+    '''
+        Finds all the test data within the folder, counts them and stores them
+    '''
     global testData
     logger = logging.getLogger('Manager.bob.updateTestData')
     testData = glob.glob(testPath+'/*'+testDataType)
@@ -76,8 +82,10 @@ def updateTestData():
         logger.info("{:3}[Updated] Test files count {}".format('',testData.__len__()))
     else:
         logger.error("No test files found")
+
 '''
-basic unit tests
+#Unit test
+
 getConfigData('config3.txt')
 print (testPath)
 print (VLCpath)

@@ -9,6 +9,7 @@ convRun = 0
 
 #Given the knowledge of the specialist generate the tests
 #Output the test generated
+
 def init(path, s=42):
     global seed, tests, testFilePath
     logger = logging.getLogger("Manager.generator.set")
@@ -33,10 +34,6 @@ def runTests(songs):
         songsGen.append(specialist.getFunc(testPos[0][0])(songs[ele][songs[ele].find('\\')+1:]))
         songs.pop(ele)
     return songsGen
-
-
-
-
 
 def cleanUp (songs):
     '''

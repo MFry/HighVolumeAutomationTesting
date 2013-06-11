@@ -16,17 +16,6 @@ VLCpath= ''#r'C:/Users/Michal/PycharmProjects/HiVAT/VLC'
 testPath= ''#'C:/Users/Michal/PycharmProjects/HiVAT/testFiles'
 #TODO: A bug occurs when a file name ends with "test "
 #NOTE: Files that may have an extension more than three chars long will not work at the momemnt
-'''
-songName = '06 Twisted Transistor'
-songExtension = '.mp3'
-song = songName+songExtension
-sampleRate = '44000'
-outputBitRate = '128'
-channels = '2'
-codec = 's161'
-type = 'wav'
-outputSongName = songName+' Converted.wav'
-'''
 
 def init (VLC, testFilesLoc):
     setPaths(VLC, testFilesLoc)
@@ -199,36 +188,3 @@ def prep(refSong, testSong):
             logger.error(stderr)
         #print(str(stdout))
         os.remove(testPath+'/'+tempName)
-
-'''
-outputSongName = getOutputName(fileName[:fileName.find('.')], '.mp3')
-print (outputSongName)
-print (testPath+'/'+fileName)
-print (VLCpath+'/'+fileName)
-shutil.copy(testPath+'/'+fileName,VLCpath+'/'+fileName)
-t = Template('vlc -I dummy $song ":sout=#transcode{acodec=$codec,ab=$outputBitRate}:std{dst=$outputSongName,access=file}" vlc://quit')
-command = t.substitute(song='"'+fileName+'"', codec=codec, outputBitRate=outputBitRate, outputSongName=outputSongName)
-print (command)
-p = subprocess.Popen(command, cwd=VLCpath, shell=True)
-stdout, stderr = p.communicate()
-os.remove(VLCpath+'/'+fileName)
-print (VLCpath+'/'+outputSongName)
-print (testPath+'/'+outputSongName)
-shutil.move(VLCpath+'/'+outputSongName,testPath+'/'+outputSongName)
-#convertToMP3('07 Combat Theme 1.wav', outputBitRate='320')
-#testPath= 'C:/Users/Michal/PycharmProjects/HiVAT/testFiles'
-#getOutputName('02 Boss Combat','.mp3')
-
-#template for converting mp3 to WAVE
-t = Template('vlc -I dummy $song ":sout=#transcode{acodec=$codec,ab=$outputBitRate}:std{dst=$outputSongName,access=file}" vlc://quit')
-out = t.substitute(song=song, codec=codec, channels=channels, outputBitRate=outputBitRate, sampleRate=sampleRate,type=type, outputSongName=outputSongName)
-print (out)
-#template for converting WAVE to mp3
-codec = 'mpga'
-outputBitRate = '192'
-outputSongName = songName+'mp3Conv'
-t = Template('vlc -I dummy $song ":sout=#transcode{acodec=$codec,ab=$outputBitRate}:std{dst=$outputSongName,access=file}" vlc://quit')
-
-command = 'vlc -I dummy -vvv {} "--sout=#transcode{{acodec={},channels={},ab={}, samplerate={}}}:standard{{access=file,mux={}, dst={}}}" vlc://quit' \
-    .format(song, codec, channels, outputBitRate, sampleRate, type, outputSongName)
-'''

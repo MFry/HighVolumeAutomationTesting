@@ -38,5 +38,3 @@ def getTest(file):
         out = [tests['wavTests'], tests['mp3Tests']], [tests['mp3Op'], []]
     #logger.debug(out)
         return out
-
-#setTests(specialist.convertToWAVE, specialist.convertToMP3, specialist.optionsMP3)

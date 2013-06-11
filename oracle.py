@@ -8,23 +8,9 @@ testsRun = 0
 
 #bob.init()
 #extract file names
-'''
-testDataNames = []
-remove = bob.testFiles.__len__() + 1
-testData = glob.glob('*.wav') #Possible limitation if we have about 16+GB of strings on this system....
-'''
-
 
 def init(path):
     testPath = path
-
-
-'''
-def testRun():
-    output = subprocess.check_output('PQevalAudio "'+'t1.wav'+'" "'+'t1.wav'+'"', shell=True)
-    output = output.split()
-    print (output[-1:])
-'''
 
 def testRun():
     output = None
@@ -37,13 +23,6 @@ def compareToSelf(song):
         Establishes a baseline of what is considered a perfect score
     '''
     return compare(song,song)
-'''
-def compare(referenceSong, testSong):
-    output = subprocess.check_output('PQevalAudio "'+referenceSong+'" "'+testSong+'"', shell=True)
-    output = output.split()
-    result = str(output[-1:])
-    return findResults(result)
-'''
 
 def compare(reference, test):
     '''
@@ -63,13 +42,6 @@ def compare(reference, test):
     print(res)
     logger.info('{:7}[PQevalAudio] [Test]#: {} [Results]: {}'.format('', testNum, res))
     return res
-'''
-def findResults(output):
-    r = re.compile('\'(.*?)\'')
-    match = r.search(output)
-    if match:
-        return float(match.group(1))
-'''
 
 def findResults(output):
     '''
@@ -107,19 +79,3 @@ def resultStats(res):
             problems += 1
             #TODO: Create a dictionary of keys -> results and store the names to give more information
     logger.info('{:3}[Possible Bugs]: {}'.format('', problems))
-'''
-#A run and statistical data
-stats = [] #Our entire data results
-
-
-#TODO: Store results in a database
-for test in testData:
-    res = compareToSelf(test)
-    print (res)
-    stats.append(res)
-print ("Statistical Results:")
-print ("Average: " + str(numpy.average(stats)))
-print ("Standard Deviation: " + str(numpy.std(stats)))
-print ("Variation: " + str(numpy.var(stats)))
-#print (compare('t1.wav'))
-'''
