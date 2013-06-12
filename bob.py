@@ -20,6 +20,7 @@ def getConfigData (fileName):
     '''
         Given a config file bob will set up the necessary paths for VLC, test data and the log
         fileName - Name of the configuration file
+        @param fileName -- Config file that will be loaded
     '''
     try:
         config = open(fileName, 'r').read()

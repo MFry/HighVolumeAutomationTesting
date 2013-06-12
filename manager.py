@@ -91,37 +91,3 @@ for test in toTest:
 #generator.cleanUp(songsComp)
 res.append(oracle.compare('A Ja Tzo Saritsa.wav', 'A Ja Tzo SaritsaBAD.wav')) #testing bad data
 oracle.resultStats(res)
-
-
-
-'''
-songsGen = []
-songs = bob.testData
-ele = 17
-print(songs[ele])
-print(songs[ele][songs[ele].find('\\')+1:])
-testPos = stateExpert.getTest(songs[ele])
-print(testPos)
-songsGen.append(specialist.getFunc(testPos[0][0])(songs[ele][songs[ele].find('\\')+1:]))
-print (songsGen)
-
-songs = bob.testData
-test = 0
-while songs.__len__() > 0:
-    print (songs.__len__())
-    i = random.randint(0,songs.__len__()-1)
-    print (i)
-    print (songs.pop(i))
-    test += 1
-print (test)
-
-
-song = '03 Mother vs. Daughter.wav'
-print(song[:-4])
-testPos = stateExpert.getTest(song)
-print(testPos)
-print(song[song.find('\\')+1:])
-specialist.getFunc(testPos[0][0])(song[song.find('\\')+1:])
-'''
-#generator.runBaseLine(bob.testData)
-#print (bob.VLCpath)
