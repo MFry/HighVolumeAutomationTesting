@@ -1,5 +1,9 @@
 from optparse import OptionParser
 import inspect, specialist, logging, bob, stateExpert, generator, random, oracle, glob
+'''
+    The manager is the point of contact between the user and the rest of the modules
+     it directly
+'''
 __author__ = 'Michal'
 
 

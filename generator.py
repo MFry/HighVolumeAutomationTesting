@@ -27,7 +27,7 @@ def runTests(songs):
     while songs.__len__() > 0:
         incCount()
         ele = random.randint(0,songs.__len__()-1)
-        #TODO: Its possible to make this less convoluted by poping the element and then working on it
+        #TODO: Its possible to make this less convoluted by popping the element and then working on it
         testPos = stateExpert.getTest(songs[ele])
         #logger.debug('{:2} Element Picked: {}, song: {} '.format('',ele,songs[ele]))
         logger.debug('{:2}[Conversion] #{:4} [Song:] {}'.format('',convRun, songs[ele][songs[ele].find('\\')+1:]))

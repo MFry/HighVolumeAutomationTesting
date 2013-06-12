@@ -1,18 +1,25 @@
 __author__ = 'Michal'
-import subprocess,re,glob,bob, numpy,logging, specialist
+import subprocess, numpy, logging, specialist
 
-testPath = 'C:/Users/Michal/PycharmProjects/HiVAT/testFiles'
-answer = 'Objective Difference Grade:'
+'''
+    This module is used to interface with an oracle from the TSP Lab
+     (url http://www-mmsp.ece.mcgill.ca/documents/Software/Packages/AFsp/AFsp.html)
+
+'''
+
+testPath = '' #location of folder containing test files
+answer = 'Objective Difference Grade:' #string we are looking for
 refType = '.wav'
 testsRun = 0
 
-#bob.init()
-#extract file names
 
 def init(path):
     testPath = path
 
 def testRun():
+    '''
+        Assuming the file test1.wav exists this allows us to test whether we have the proper oracle and things are correctly setup
+    '''
     output = None
     p = subprocess.Popen('PQevalAudio "'+'test1.wav'+'" "'+'test1.wav'+'"',shell=True,cwd=testPath, stdout=subprocess.PIPE)
     output, stderr = p.communicate()
@@ -20,13 +27,16 @@ def testRun():
 
 def compareToSelf(song):
     '''
-        Establishes a baseline of what is considered a perfect score
+        Establishes a baseline of what is considered a perfect score by comparing a song against itself
     '''
     return compare(song,song)
 
 def compare(reference, test):
     '''
-        Compares two songs which need to be .wav at 48000Khz, this will attempt to isolate an identical sample size and account for
+        @param reference -- The original "untouched" song (should be a .wav at 48kHz)
+        @param test -- The copy of the song which was modified through a conversion (or synthetic means to create a "bad" song (static noise, drop in volume, ect.)
+        Compares two songs which need to be .wav at 48000Khz (for accuracy), this will attempt to isolate an identical sample size and account for db variation
+        @return the value within the string outputed by PQevalAudio, more information about the value can be found here (http://www-mmsp.ece.mcgill.ca/documents/Software/Packages/AFsp/PQevalAudio.html)
     '''
     specialist.prep(reference, test)
     testNum = incCount()
@@ -45,17 +55,22 @@ def compare(reference, test):
 
 def findResults(output):
     '''
-        Parses the output to find the results
+        Parses the output string to find the desired numeric value and ignore the extra information
+        @param output -- String outputed by PQevalAudio
     '''
     output = str(output)
     output = output[output.find(answer)+answer.__len__()+1:]
     return output[:output.find('\\')]
 
 def incCount():
+    '''
+        Increments the count for the number of test cases evaluated
+        @return -- the current number of evaluated tests
+    '''
     global testsRun
     testsRun += 1
     return testsRun
-#testRun()
+
 
 def resultStats(res):
     '''

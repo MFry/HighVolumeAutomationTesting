@@ -1,13 +1,15 @@
 __author__ = 'Michal'
 import specialist, logging
+#interface between generator and the speacilist
 
 tests = {}
 
+
 def setTests(WAVTest, MP3Test, MP3Options):
     '''
-        @Param WAVTest -
-        @Param MP3Test -
-        @Param MP3Options -
+        @Param WAVTest - The function containing WAV conversion
+        @Param MP3Test - The function containing MP3 conversion
+        @Param MP3Options - This contains certain parameters than can be changed that would effect the conversion, such as bitrates and the codec
         Sets the necessary information to work with the specialist class and run tests properly
     '''
     global tests
@@ -27,14 +29,13 @@ def getTest(file):
     '''
     global tests
     logger = logging.getLogger('Manager.stateExpert.getTest')
-    #handles certain special character combinations within file names
+    #find the file extension so that we can give an option of what tests make sense to perform
     file = file[::-1] # reverse file
     songType = file[:file.find('.')+1]
     songType = songType[::-1]
     if songType == '.wav':
         out = [tests['mp3Tests'], []], [tests['mp3Op'], []]
-        return out
     elif songType == '.mp3':
         out = [tests['wavTests'], tests['mp3Tests']], [tests['mp3Op'], []]
-    #logger.debug(out)
-        return out
+    logger.debug(out)
+    return out

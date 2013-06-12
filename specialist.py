@@ -4,7 +4,7 @@ __author__ = 'Michal'
 #interface between generator and the speacilist
 #drives the application under test
 
-#be able to drive application X (audacity, videoLAN, ect)
+#be able to drive application videoLAN
 #provide several conversion options
 #convert a song to a specified format
 #convert it back
@@ -12,10 +12,10 @@ specLogger = logging.getLogger('Manager.specialist')
 handledConv = ['.mp3','.wav']
 unhandledSpecChar = ["'", ',', '_']
 optionsMP3 = ['128','160','192','320'] #options for MP3
-VLCpath= ''#r'C:/Users/Michal/PycharmProjects/HiVAT/VLC'
-testPath= ''#'C:/Users/Michal/PycharmProjects/HiVAT/testFiles'
+VLCpath= ''
+testPath= ''
 #TODO: A bug occurs when a file name ends with "test "
-#NOTE: Files that may have an extension more than three chars long will not work at the momemnt
+#NOTE: Files that may have an extension more than three chars (or less) long will not work at the moment
 
 def init (VLC, testFilesLoc):
     setPaths(VLC, testFilesLoc)
@@ -25,8 +25,8 @@ def init (VLC, testFilesLoc):
 
 def setPaths (VLC, testFilesLoc):
     '''
-        VLC -- Path to a VLC folder
-        testFiles -- Path to the folder which contains all of your test files
+        @param VLC -- Path to a VLC folder
+        @param testFilesLoc -- Path to the folder which contains all of your test files
     '''
     global VLCpath,testPath
     logger = logging.getLogger('Manager.specialist.setPaths')
@@ -38,10 +38,14 @@ def setPaths (VLC, testFilesLoc):
 def convertToWAVE(fileName, codec='s16l', channels='2', outputBitRate='128', sampleRate='48000', type='wav'):
     '''
         Given a filename this function will attempt to call VLC and convert it into a WAVE format
-
-        Returns the string necessary to be called to convert the file to a WAVE file
+        @param fileName -- The name of the file to be converted
+        @param codec -- the codec used to do the conversion (VLC command line parameter)
+        @param channels -- (VLC command line parameter)
+        @param outputBitRate -- (VLC command line parameter)
+        @param sampleRate -- For the purposes of this particular oracle implementation, we should always keep it at 48kHz(VLC command line parameter)
+        @param type
+        Returns a string necessary to be called to convert the file to a WAVE file
     '''
-
     outputSongName = getOutputName(fileName[:-4], '.wav')
     shutil.copy2(testPath+'/'+fileName,VLCpath+'/'+fileName)
     #adding -vvv after dummy creates no cmd screen but dumps everything to stderr
@@ -51,9 +55,8 @@ def convertToWAVE(fileName, codec='s16l', channels='2', outputBitRate='128', sam
     print (command)
     p = subprocess.Popen(command, cwd=VLCpath, shell=True)
     stdout, stderr = p.communicate()
-    #log stderr and stdout
+    #TODO: log stderr and stdout
     #clean up
-
     os.remove(VLCpath+'/'+fileName)
     shutil.move(VLCpath+'/'+outputSongName,testPath+'/'+outputSongName)
     return outputSongName
@@ -141,7 +144,9 @@ def removeSpecialChar (name, char):
 
 def prep(refSong, testSong):
     '''
-        Attempts to clean up the songs so that they can be better compared.
+        Attempts to clean up the songs, by changing the db gain and resampling the songs to improve the accuracy of the oracle
+        NOTE: Proper resampling within the library that the oracle uses does not work, even using their sample code
+               this may be the lack of understanding of the code or a bug
     '''
     logger = logging.getLogger('Manager.specialist.prep')
     #make testSong into a tempFile
@@ -162,7 +167,9 @@ def prep(refSong, testSong):
             offset = samp.find(' (')
             samplesNum.append(samp[:offset])
     logger.debug('{:5}[Sample Rates]: {} [db Gain]: {}'.format('', samplesNum, dbGain))
-    #TODO: Make this more sophisticated
+
+    #db gain of one implies that the file does not need to be adjusted, through testing
+    #   adjusting the db improves accuracy of the oracle
     if dbGain != 1:
         tempName = 'tempf.wav'
         os.rename(testPath+'/'+testSong, testPath+'/'+tempName)
@@ -175,6 +182,7 @@ def prep(refSong, testSong):
             logger.error(stderr)
         #print(str(stdout))
         os.remove(testPath+'/'+tempName)
+    # different sampling rates significantly distorts the accuracy of the oracle
     if samplesNum[0] > samplesNum[1]:
         logger.debug('{:5}[Resampling]: {}'.format('', refSong))
         tempName = 'tempf.wav'
