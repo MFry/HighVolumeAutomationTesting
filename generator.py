@@ -1,7 +1,6 @@
 __author__ = 'Michal'
 import random, logging, specialist, stateExpert, os, oracle
 
-__doc__ = ''
 seed = None
 tests = None
 testFilePath = ''
