@@ -1,6 +1,7 @@
+__author__ = 'Michal'
 from string import Template
 import subprocess, shutil, logging, os, time, datetime, glob
-__author__ = 'Michal'
+
 #interface between generator and the speacilist
 #drives the application under test
 

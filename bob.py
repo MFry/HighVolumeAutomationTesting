@@ -1,7 +1,7 @@
 __author__ = 'Michal'
-'''
-    Initializes the basics and does some basic sanity checks to see whether the parameters set make sense.
-'''
+
+#    Initializes the basics and does some basic sanity checks to see whether the parameters set make sense.
+
 import glob, os, sys, logging
 fileFormat = "/*.wav"
 testData = []

@@ -1,5 +1,6 @@
 __author__ = 'Michal'
 import specialist, logging
+
 #interface between generator and the speacilist
 
 tests = {}

@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/oracle.py" afterPath="$PROJECT_DIR$/oracle.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bob.py" afterPath="$PROJECT_DIR$/bob.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fileManager.py" afterPath="$PROJECT_DIR$/fileManager.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator.py" afterPath="$PROJECT_DIR$/generator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager.py" afterPath="$PROJECT_DIR$/manager.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/specialist.py" afterPath="$PROJECT_DIR$/specialist.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stateExpert.py" afterPath="$PROJECT_DIR$/stateExpert.py" />
     </list>
     <ignored path="HVAT.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371001052622" ignored="false" />
-    <file path="/bob.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371009502810" ignored="false" />
+    <file path="/bob.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371095897838" ignored="false" />
     <file path="$PROJECT_DIR$/../Browser/lexers/JavaScriptLexer.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1370915243536" ignored="false" />
     <file path="/JavaScriptLexer.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1370915062893" ignored="false" />
     <file path="/stateExpert.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371001674917" ignored="false" />
     <file path="/specialist.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371005943960" ignored="false" />
-    <file path="/manager.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371003380444" ignored="false" />
+    <file path="/manager.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371095861058" ignored="false" />
     <file path="/a.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371003199305" ignored="false" />
     <file path="/oracle.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371095756727" ignored="false" />
+    <file path="/fileManager.py" changelist="679ce41b-ddfc-4e94-8fdd-fe3aa577fdf3" time="1371095886564" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,19 +40,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="generator.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="generator.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="20" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="82" selection-end="82" vertical-scroll-proportion="0.038857143">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="oracle.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="oracle.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oracle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="52" selection-start="3641" selection-end="3708" vertical-scroll-proportion="1.7552204">
+            <state line="0" column="21" selection-start="0" selection-end="21" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,7 +61,7 @@
       <file leaf-file-name="specialist.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/specialist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="11" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
+            <state line="3" column="0" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -64,7 +70,7 @@
       <file leaf-file-name="stateExpert.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stateExpert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="10" selection-start="115" selection-end="123" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -73,7 +79,7 @@
       <file leaf-file-name="manager.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="0" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0">
+            <state line="6" column="0" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -82,7 +88,7 @@
       <file leaf-file-name="fileManager.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fileManager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,7 +97,7 @@
       <file leaf-file-name="bob.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bob.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="58" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0">
+            <state line="2" column="1" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -115,12 +121,13 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/stateExpert.py" />
-        <option value="$PROJECT_DIR$/specialist.py" />
-        <option value="$PROJECT_DIR$/generator.py" />
+        <option value="$PROJECT_DIR$/oracle.py" />
         <option value="$PROJECT_DIR$/manager.py" />
         <option value="$PROJECT_DIR$/bob.py" />
-        <option value="$PROJECT_DIR$/oracle.py" />
+        <option value="$PROJECT_DIR$/specialist.py" />
+        <option value="$PROJECT_DIR$/fileManager.py" />
+        <option value="$PROJECT_DIR$/stateExpert.py" />
+        <option value="$PROJECT_DIR$/generator.py" />
       </list>
     </option>
   </component>
@@ -390,51 +397,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fileManager.py">
+    <entry file="file://$PROJECT_DIR$/bob.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="2" column="1" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generator.py">
+    <entry file="file://$PROJECT_DIR$/fileManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="20" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0">
+        <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/specialist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="11" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
+        <state line="3" column="0" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stateExpert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="115" selection-end="123" vertical-scroll-proportion="0.0">
+        <state line="2" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bob.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="58" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0">
+        <state line="6" column="0" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oracle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="52" selection-start="3641" selection-end="3708" vertical-scroll-proportion="1.7552204">
+        <state line="0" column="21" selection-start="0" selection-end="21" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="82" selection-end="82" vertical-scroll-proportion="0.038857143">
           <folding />
         </state>
       </provider>

@@ -1,8 +1,7 @@
 __author__ = 'Michal'
 
-'''
-    This module takes a set of files for testing, moves them and renames them so that they can be easily accessed.
-'''
+#    This module takes a set of files for testing, moves them and renames them so that they can be easily accessed.
+
 testFileLoc = ''
 testData = []
 
