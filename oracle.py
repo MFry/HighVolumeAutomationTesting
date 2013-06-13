@@ -1,17 +1,18 @@
 __author__ = 'Michal'
 import subprocess, numpy, logging, specialist
 
-'''
-    This module is used to interface with an oracle from the TSP Lab
-     (url http://www-mmsp.ece.mcgill.ca/documents/Software/Packages/AFsp/AFsp.html)
 
-'''
+#    This module is used to interface with an oracle from the TSP Lab
+#     (url http://www-mmsp.ece.mcgill.ca/documents/Software/Packages/AFsp/AFsp.html)
+#     Currently, because of the weakness of the oracle and the lack of mathematical sophistication
+#     the false negative rate is rather high.
+
 
 testPath = '' #location of folder containing test files
 answer = 'Objective Difference Grade:' #string we are looking for
 refType = '.wav'
 testsRun = 0
-
+sensitivity = 1
 
 def init(path):
     testPath = path
@@ -90,7 +91,7 @@ def resultStats(res):
     logger.info('{:3}[Standard Deviation]: {}'.format('', stdDev))
     problems = 0
     for result in results:
-        if result <= avg-2*stdDev:
+        if result <= avg-sensitivity*stdDev:
             problems += 1
             #TODO: Create a dictionary of keys -> results and store the names to give more information
     logger.info('{:3}[Possible Bugs]: {}'.format('', problems))
